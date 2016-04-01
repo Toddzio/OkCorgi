@@ -13,7 +13,7 @@ router.post('/', function(req, res, next) {
     var dogtag = req.body.dogtag;
     var image = req.body.image;
 
-    var newUser = Corgi({
+    var newUser = corgi({
         name: name,
         age: age,
         dogtag: dogtag,
