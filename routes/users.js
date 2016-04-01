@@ -3,8 +3,6 @@ var router = express.Router();
 var corgi = require('../models/corgis');
 
 /* GET users listing. */
-
-
 router.get('/', function(req, res, next) {
     console.log(ourcorgi);
   res.send('respond with a resource');
@@ -21,16 +19,11 @@ router.get('/list', function(req, res, next) {
     });
 });
 
-// Dog.findOne({ liked: null }, function(err, dog) {
-//    if (err) console.log(err);
-//    console.log(dog);
+router.post('/', function(req, res, next){
+  var pawUp = req.body.pawUp;
+  pawUp.save
+})
 
-//    res.render('index', {
-//      title: 'Express',
-//      dog: dog
-//    });
-//  });
-// });
 
 router.post('/', function(req, res, next) {
     var name = req.body.name;
