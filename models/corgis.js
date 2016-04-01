@@ -1,10 +1,12 @@
+var mongoose = require('mongoose');
+
 var corgiSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  age: { type: int, required: true, unique: true },
+  age: { type: Number, required: true, unique: true },
   dogtag: String,
   image: String,
-  pawUp: boolean,
-  pawDown: boolean,
+  pawUp: Boolean,
+  pawDown: Boolean,
   created_at: Date,
   updated_at: Date
 });
