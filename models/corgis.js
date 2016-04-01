@@ -13,4 +13,4 @@ var corgiSchema = new mongoose.Schema({
 var corgi = mongoose.model('corgis', corgiSchema);
 
 // Make this available to our other files
-module.exports = User;
+module.exports = Corgi;
