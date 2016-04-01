@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var corgi = require('../models/corgis');
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -13,7 +15,7 @@ router.post('/', function(req, res, next) {
     var dogtag = req.body.dogtag;
     var image = req.body.image;
 
-    var newUser = corgi({
+    var newCorgi = corgi({
         name: name,
         age: age,
         dogtag: dogtag,
@@ -21,7 +23,7 @@ router.post('/', function(req, res, next) {
     });
 
     // Save the user
-    newUser.save(function(err) {
+    newCorgi.save(function(err) {
         if (err) console.log(err);
 
         console.log('no err');
@@ -33,6 +35,11 @@ router.post('/', function(req, res, next) {
 router.get('/new', function(req, res, next) {
   res.render('new');
 });
+
+router.get('/show', function(req, res, next) {
+  res.render('show', {title: 'OkCorgi'});
+});
+
 
 
 
